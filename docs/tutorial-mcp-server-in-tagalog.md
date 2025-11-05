@@ -1,5 +1,3 @@
-Oo, sige\! Narito ang Tagalog na bersyon ng tutorial, detalyado ang paggawa, pag-set up, at paggamit ng Model Context Protocol (MCP) Server gamit ang Spring AI.
-
 -----
 
 # 🇵🇭 `tutorial-mcp-server.md`: Paggawa at Paggamit ng Spring AI MCP Server (Tagalog Tutorial)
