@@ -26,4 +26,4 @@ spring:
 # Spring AI / MCP Server Configuration (optional but good practice)
 # -------------------------------------------------------------------
 server:
-  port: 8086
+  port: 8085
