@@ -16,10 +16,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
+  ai:
+    mcp:
+      server:
+        name: contact-information
+        version: 0.0.1
+        protocol: STREAMABLE
 # -------------------------------------------------------------------
 # Spring AI / MCP Server Configuration (optional but good practice)
 # -------------------------------------------------------------------
-spring.ai:
-  mcp-server:
-    port: 8080 # Default Spring Boot port
+server:
+  port: 8086
