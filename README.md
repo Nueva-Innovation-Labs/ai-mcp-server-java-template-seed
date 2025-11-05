@@ -111,3 +111,25 @@ The application will start on port `8080`. The `DatabaseSeeder` will run, confir
         * **Expected Result**: A JSON array of Address objects for the contact with ID `1`.
 
 This confirms the service is correctly retrieving data from the PostgreSQL database and exposing it through the Spring AI MCP server endpoints.
+
+
+## Enable Annotation Processing in your IDE
+
+If your model classes use `@Data` (or similar Lombok annotations), you must enable annotation processing in your IDE so it can generate the methods before compilation.
+
+### 🛠️ Fix for IntelliJ IDEA:
+
+1.  Go to **Settings/Preferences**.
+2.  Navigate to **Build, Execution, Deployment** -\> **Compiler** -\> **Annotation Processors**.
+3.  Ensure the **"Enable annotation processing"** checkbox is **checked**.
+4.  Apply the changes.
+
+### 🛠️ Final Step: Rebuild Project
+
+After enabling annotation processing and applying the settings, you must force the IDE to re-index the project:
+
+1.  In IntelliJ IDEA, go to **File** -\> **Invalidate Caches...**
+2.  Select **"Invalidate and Restart"**.
+3.  Once the IDE restarts, perform a **Rebuild Project** (Build -\> Rebuild Project).
+
+This process will force the IDE to run the Lombok processor, which will generate the missing methods and resolve all 17 "cannot find symbol" errors in `DatabaseSeeder.java`.

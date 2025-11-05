@@ -2,10 +2,13 @@ package com.nuevainnovation.ai_mcp_server_java_template_seed.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "addresses")
 @Data // Lombok: Generates getters, setters, toString, equals, and hashCode
+@Getter @Setter
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

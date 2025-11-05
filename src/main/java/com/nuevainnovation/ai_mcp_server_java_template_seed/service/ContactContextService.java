@@ -5,7 +5,7 @@ import com.nuevainnovation.ai_mcp_server_java_template_seed.model.Address;
 import com.nuevainnovation.ai_mcp_server_java_template_seed.model.Contact;
 import com.nuevainnovation.ai_mcp_server_java_template_seed.repository.AddressRepository;
 import com.nuevainnovation.ai_mcp_server_java_template_seed.repository.ContactRepository;
-import org.springframework.ai.tool.Tool;
+import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
