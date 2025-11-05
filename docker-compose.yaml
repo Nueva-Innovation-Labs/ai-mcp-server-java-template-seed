@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: postgres_ai_db
+    environment:
+      # These variables are for the default 'postgres' user
+      POSTGRES_DB: ai_database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes:
+      # This volume persists the data
+      - postgres_data:/var/lib/postgresql/data
+      # This script runs on first creation to initialize the user
+      - ./db_init_user_only.sql:/docker-entrypoint-initdb.d/db_init_user_only.sql
+    ports:
+      # Expose port 5432 to the host machine
+      - "5432:5432"
+    restart: always
+
+volumes:
+  postgres_data:

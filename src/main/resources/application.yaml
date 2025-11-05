@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ai-mcp-server-java-template-seed
+  # -------------------------------------------------------------------
+  # Database Configuration (PostgreSQL)
+  # -------------------------------------------------------------------
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ai_database
+    username: user1234
+    password: password1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # Automatically update the schema based on entities
+    show-sql: true # Log SQL statements
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# -------------------------------------------------------------------
+# Spring AI / MCP Server Configuration (optional but good practice)
+# -------------------------------------------------------------------
+spring.ai:
+  mcp-server:
+    port: 8080 # Default Spring Boot port

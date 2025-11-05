@@ -1,0 +1,74 @@
+{
+  "info": {
+    "_postman_id": "0d8b4e7a-9c7b-4d43-982e-9d8a3f8b0e8c",
+    "name": "AI MCP Context Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_collection_id": "0d8b4e7a-9c7b-4d43-982e-9d8a3f8b0e8c"
+  },
+  "item": [
+    {
+      "name": "Get Contact Info Context (By Email)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"getContactInfo\",\n    \"arguments\": {\n        \"email\": \"user1@example.com\"\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/ai/context/functions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "ai",
+            "context",
+            "functions"
+          ]
+        },
+        "description": "Tests the 'getContactInfo' function. Replace email with one of the seeded emails (user1@example.com to user1000@example.com) after running the application."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Contact Addresses Context (By ID)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"getContactAddresses\",\n    \"arguments\": {\n        \"contactId\": 1\n    }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/v1/ai/context/functions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "v1",
+            "ai",
+            "context",
+            "functions"
+          ]
+        },
+        "description": "Tests the 'getContactAddresses' function. Replace contactId with one of the seeded IDs (1 to 1000) after running the application."
+      },
+      "response": []
+    }
+  ]
+}
