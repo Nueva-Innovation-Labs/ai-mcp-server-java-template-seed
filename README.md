@@ -1,2 +1,117 @@
 # ai-mcp-server-java-template-seed
 MCP Server Java Template Incubation - Spring boot
+
+### https://start.spring.io/
+![MCP Server start.spring.io](docs/spring-io-start.png)
+
+
+I'll update the `README.md` to include a link to the `tutorial-mcp-server.md` file you generated.
+
+Here is the updated `README.md`:
+
+# 🚀 AI MCP Server Java Template Seed
+
+This project is a Spring Boot application acting as an **AI Context Service** using the Spring AI MCP (Model Context Provider) pattern. It exposes two functions to retrieve contact and address information from a PostgreSQL database using JPA.
+
+-----
+
+## 📘 **Tutorial**
+
+For a step-by-step guide on the concepts, setup, and testing of this MCP Server, please refer to the tutorial:
+
+* **[MCP Server Setup and Usage Tutorial](docs/tutorial-mcp-server.md)
+
+-----
+
+## 📋 1. Tables Information
+
+The application uses two primary tables to store customer data. These tables are managed by Spring Data JPA based on the `Contact` and `Address` entities.
+
+| Table Name | Entity | Description | Key Fields |
+| :--- | :--- | :--- | :--- |
+| **`contacts`** | `Contact.java` | Stores primary contact details. | `contact_id` (PK), `email` (Unique) |
+| **`addresses`** | `Address.java` | Stores physical address details, linked to a contact. | `address_id` (PK), `contact_id` (FK) |
+
+### 🔍 AI Context Functions Provided
+
+The `ContactContextService` exposes two functions to the AI model:
+
+| Function Name | Description | Parameters | Purpose |
+| :--- | :--- | :--- | :--- |
+| `getContactInfo` | Retrieves contact details (name, email, phone) | `email` (String) | Contact Information Context |
+| `getContactAddresses` | Retrieves addresses for a specific contact | `contactId` (Long) | Address Information Context |
+
+-----
+
+## 🛠️ 2. How to Setup Locally
+
+### Prerequisites
+
+* Java 17+
+* Maven
+* Docker and Docker Compose
+* Postman (for API testing)
+
+### Step 1: Set up the Database with Docker
+
+1.  Ensure you have the `docker-compose.yaml` and `db_init_user_only.sql` files in your project root.
+
+2.  Run the Docker Compose command to start the PostgreSQL container:
+
+    ```bash
+    docker-compose up -d
+    ```
+
+3.  The database will be running at `localhost:5432`. The application is configured to connect using the following credentials:
+
+    * **URL:** `jdbc:postgresql://localhost:5432/ai_database`
+    * **Username:** `[username]`
+    * **Password:** `[password]`
+
+### Step 2: Initialize the Database Schema and Data
+
+1.  Connect to the running PostgreSQL container (e.g., using `psql` or a GUI tool).
+2.  Run the `db_init.sql` script to create the `contacts` and `addresses` tables.
+3.  The Spring Boot application, on startup, will use the `DatabaseSeeder.java` component to **automatically generate 1000 records** for both `contacts` and `addresses` tables, as requested.
+
+-----
+
+## ▶️ 3. How to Run
+
+### Step 1: Build the Project
+
+Use Maven to compile and package the application:
+
+```bash
+mvn clean install
+```
+
+### Step 2: Run the Spring Boot Application
+
+Execute the packaged JAR file:
+
+```bash
+mvn spring-boot:run
+# OR
+# java -jar target/ai-mcp-server-java-template-seed-0.0.1-SNAPSHOT.jar
+```
+
+The application will start on port `8080`. The `DatabaseSeeder` will run, confirming the 1000 records have been created in the logs.
+
+### Step 3: Test the Context Functions with Postman
+
+1.  Import the provided `ai-mcp-context-postman.json` file into Postman.
+
+2.  Use the imported requests to test the AI context functions:
+
+    * **Test `getContactInfo`**:
+
+        * **Request Body Example**: `{"name": "getContactInfo", "arguments": {"email": "user1@example.com"}}`
+        * **Expected Result**: A JSON object with Contact details for `user1@example.com`.
+
+    * **Test `getContactAddresses`**:
+
+        * **Request Body Example**: `{"name": "getContactAddresses", "arguments": {"contactId": 1}}`
+        * **Expected Result**: A JSON array of Address objects for the contact with ID `1`.
+
+This confirms the service is correctly retrieving data from the PostgreSQL database and exposing it through the Spring AI MCP server endpoints.
