@@ -5,10 +5,6 @@ MCP Server Java Template Incubation - Spring boot
 ![MCP Server start.spring.io](docs/spring-io-start.png)
 
 
-I'll update the `README.md` to include a link to the `tutorial-mcp-server.md` file you generated.
-
-Here is the updated `README.md`:
-
 # 🚀 AI MCP Server Java Template Seed
 
 This project is a Spring Boot application acting as an **AI Context Service** using the Spring AI MCP (Model Context Provider) pattern. It exposes two functions to retrieve contact and address information from a PostgreSQL database using JPA.
@@ -20,7 +16,7 @@ This project is a Spring Boot application acting as an **AI Context Service** us
 For a step-by-step guide on the concepts, setup, and testing of this MCP Server, please refer to the tutorial:
 
 * **[MCP Server Setup and Usage Tutorial](docs/tutorial-mcp-server.md)
-
+* **[MCP Server Setup and Usage Tutorial (TAGALOG) ](docs/tutorial-mcp-server-in-tagalog.md)
 -----
 
 ## 📋 1. Tables Information
