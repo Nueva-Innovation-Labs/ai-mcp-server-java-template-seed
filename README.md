@@ -134,13 +134,9 @@ After enabling annotation processing and applying the settings, you must force t
 
 This process will force the IDE to run the Lombok processor, which will generate the missing methods and resolve all 17 "cannot find symbol" errors in `DatabaseSeeder.java`.
 
-
-
-
 This workflow diagram illustrates how an **n8n automation** leverages an **AI agent** and the **MCP Server** to perform a customer outreach task.
 
 ## N8N Automation Workflow: AI Tool-Calling for Contact Retrieval and Email
-
 ![Workflow Diagram](docs/usage.png)
 ![Workflow Diagram Email Flow](docs/email-flow.png)
 ![Workflow Diagram MCP Client Config](docs/mcp-config-n8n.png)
