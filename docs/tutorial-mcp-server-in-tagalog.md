@@ -120,7 +120,7 @@ Sa pag-start, isasagawa ng `DatabaseSeeder` ang paggawa ng 1000 records sa datab
 
 Maaaring makita ng isang AI Client kung anong mga tool ang inilalantad ng iyong server sa pamamagitan ng pag-access sa endpoint na ito:
 
-* **URL:** `http://localhost:8080/v1/ai/context/functions`
+* **URL:** `http://localhost:8080/mcp`
 * **Method:** `GET`
 
 Kapag binuksan mo ito sa browser, makikita mo ang JSON specifications para sa `getContactInfo` at `getContactAddresses`.
@@ -129,7 +129,7 @@ Kapag binuksan mo ito sa browser, makikita mo ang JSON specifications para sa `g
 
 Ito ang paraan ng pagtawag ng AI Host sa iyong mga function. Gagamitin natin ang Postman (o ang provided na `ai-mcp-context-postman.json`) para dito.
 
-* **URL:** `http://localhost:8080/v1/ai/context/functions`
+* **URL:** `http://localhost:8080/mcp`
 * **Method:** `POST`
 * **Headers:** `Content-Type: application/json`
 

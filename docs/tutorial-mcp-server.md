@@ -119,7 +119,7 @@ The application will start, connect to the database, and the **DatabaseSeeder** 
 
 When the application starts, it exposes the tool specifications at a dedicated endpoint.
 
-* **URL:** `http://localhost:8080/v1/ai/context/functions`
+* **URL:** `http://localhost:8080/mcp`
 * **Method:** `GET`
 
 You can access this URL in your browser or Postman. The response will be a JSON array containing the specifications for `getContactInfo` and `getContactAddresses`, which the AI Client uses for tool discovery.
@@ -128,7 +128,7 @@ You can access this URL in your browser or Postman. The response will be a JSON 
 
 To test a tool call as the AI Host would:
 
-* **URL:** `http://localhost:8080/v1/ai/context/functions`
+* **URL:** `http://localhost:8080/mcp`
 * **Method:** `POST`
 * **Headers:** `Content-Type: application/json`
 
